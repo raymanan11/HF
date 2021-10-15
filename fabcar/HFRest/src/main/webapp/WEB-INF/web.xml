@@ -15,11 +15,4 @@
         <servlet-name>Jersey Web Application</servlet-name>
         <url-pattern>/webapi/*</url-pattern>
     </servlet-mapping>
-    <key>NSAppTransportSecurity</key>
-	<dict>
-    	<key>NSAllowsArbitraryLoads</key>
-    	<true/>
-    	<key>NSAllowsArbitraryLoadsInWebContent</key>
-    	<true/>
-	</dict>
 </web-app>

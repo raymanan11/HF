@@ -5,13 +5,14 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("cars")
+@Path("myresource")
 public class APIEndpoints {
-
+	
 	@GET
-	//@Produces(MediaType.APPLICATION_JSON)
-	public String getCars() {
-		ClientApp clientApp = new ClientApp();
-		return clientApp.getCars();
+	@Produces(MediaType.TEXT_PLAIN)
+	public static String getCars() {
+//		ClientApp clientApp = new ClientApp();
+//		return clientApp.getCars();
+		return "Getting cars!";
 	}
 }

@@ -56,36 +56,52 @@ public class ClientApp {
 //	}
 	
 	public ClientApp() {
-		try {
-			Path walletPath = Paths.get("wallet");
-			Wallet wallet = Wallets.newFileSystemWallet(walletPath);
-			
-			Path networkConfigPath = Paths.get("..", "..", "test-network", "organizations", "peerOrganizations", "org1.example.com", "connection-org1.yaml");
-
-			Gateway.Builder builder = Gateway.createBuilder();
-			builder.identity(wallet, "appUser").networkConfig(networkConfigPath).discovery(true);
-			
-			try (Gateway gateway = builder.connect()) {
-
-				// get the network and contract
-				Network network = gateway.getNetwork("mychannel");
-				contract = network.getContract("fabcar");
-			}
-		}
-		catch (Exception e) {
-			System.out.println("Error!");
-		}
+//		try {
+//			Path walletPath = Paths.get("wallet");
+//			Wallet wallet = Wallets.newFileSystemWallet(walletPath);
+//			
+//			Path networkConfigPath = Paths.get("..", "..", "test-network", "organizations", "peerOrganizations", "org1.example.com", "connection-org1.yaml");
+//
+//			Gateway.Builder builder = Gateway.createBuilder();
+//			builder.identity(wallet, "appUser").networkConfig(networkConfigPath).discovery(true);
+//			
+//			try (Gateway gateway = builder.connect()) {
+//
+//				// get the network and contract
+//				Network network = gateway.getNetwork("mychannel");
+//				contract = network.getContract("fabcar");
+//			}
+//		}
+//		catch (Exception e) {
+//			System.out.println("Error: " + e);
+//		}
 	}
 	
 	public String getCars() {
 		try {
-			byte[] result;
+			Path walletPath = Paths.get("/Users/raymanan11/Desktop/CSULB/CECS406/HF/fabcar/HFRest/wallet");
+			Wallet wallet = Wallets.newFileSystemWallet(walletPath);
+			// load a CCP
+			Path networkConfigPath = Paths.get("/Users/raymanan11/Desktop/CSULB/CECS406/HF/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml");
 
-			result = contract.evaluateTransaction("queryAllCars");
-			return new String(result);
+			Gateway.Builder builder = Gateway.createBuilder();
+			builder.identity(wallet, "appUser").networkConfig(networkConfigPath).discovery(true);
+
+			// create a gateway connection
+			try (Gateway gateway = builder.connect()) {
+
+				// get the network and contract
+				Network network = gateway.getNetwork("mychannel");
+				Contract contract = network.getContract("fabcar");
+
+				byte[] result;
+
+				result = contract.evaluateTransaction("queryAllCars");
+				return new String(result);
+			}
 		}
 		catch (Exception e) {
-			System.out.println("Error trying to get all cars!");
+			System.out.println("Error mania: " + e);
 			return "Error";
 		}
 	}
