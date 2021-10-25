@@ -21,9 +21,9 @@ public final class CarQueryResult {
     private final String key;
 
     @Property()
-    private final Car record;
+    private final AirlinePart record;
 
-    public CarQueryResult(@JsonProperty("Key") final String key, @JsonProperty("Record") final Car record) {
+    public CarQueryResult(@JsonProperty("Key") final String key, @JsonProperty("Record") final AirlinePart record) {
         this.key = key;
         this.record = record;
     }
@@ -32,7 +32,7 @@ public final class CarQueryResult {
         return key;
     }
 
-    public Car getRecord() {
+    public AirlinePart getRecord() {
         return record;
     }
 
