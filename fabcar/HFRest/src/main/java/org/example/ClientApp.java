@@ -39,7 +39,29 @@ public class ClientApp {
 		}
 	}
 	
-	public String getCars() {
+	public String getAllAirlineParts() {
+		try {
+			// create a gateway connection
+			try (Gateway gateway = builder.connect()) {
+
+				// get the network and contract
+				Network network = gateway.getNetwork("mychannel");
+				contract = network.getContract("fabcar");
+				
+				byte[] result;
+
+				result = contract.evaluateTransaction("QueryAllAirlineParts");
+				return new String(result);
+			}
+				
+		}
+		catch (Exception e) {
+			System.out.println("Error mania: " + e);
+			return "Error";
+		}
+	}
+	
+	public String queryAirlinePart(String airlinePart) {
 		try {
 
 			// create a gateway connection
@@ -51,7 +73,7 @@ public class ClientApp {
 				
 				byte[] result;
 
-				result = contract.evaluateTransaction("queryAllCars");
+				result = contract.evaluateTransaction("QueryAirlinePart", airlinePart);
 				return new String(result);
 			}
 				
@@ -62,6 +84,28 @@ public class ClientApp {
 		}
 	}
 	
+	public String changePartOwner(String airlinePart, String newOwner) {
+		try {
+
+			// create a gateway connection
+			try (Gateway gateway = builder.connect()) {
+
+				// get the network and contract
+				Network network = gateway.getNetwork("mychannel");
+				contract = network.getContract("fabcar");
+				
+				byte[] result;
+
+				result = contract.evaluateTransaction("ChangeAirlinePartOwner", airlinePart, newOwner);
+				return new String(result);
+			}
+				
+		}
+		catch (Exception e) {
+			System.out.println("Error mania: " + e);
+			return "Error";
+		}
+	}
 	
 	
 }
