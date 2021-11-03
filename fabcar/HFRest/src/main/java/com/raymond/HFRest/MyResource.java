@@ -1,6 +1,9 @@
 package com.raymond.HFRest;
 
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+
 import org.example.*;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -12,10 +15,11 @@ import jakarta.ws.rs.core.MediaType;
  */
 @Path("parts")
 public class MyResource {
+	ClientApp clientApp = new ClientApp();
+	
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getParts() {
-		ClientApp clientApp = new ClientApp();
 		return clientApp.getAllAirlineParts();
     }
     
@@ -23,16 +27,13 @@ public class MyResource {
     @Path("{partName}")
     @Produces(MediaType.APPLICATION_JSON)
     public String getCurrentPart(@PathParam("partName") String partName) {
-		ClientApp clientApp = new ClientApp();
 		return clientApp.queryAirlinePart(partName);
     }
     
-//    @GET
-//    @Path("{newOwner}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public String changePartOwner(@PathParam("airlinePart") String airlinePart, @PathParam("newOwner") String newOwner) {
-//		ClientApp clientApp = new ClientApp();
-//		return clientApp.changePartOwner(airlinePart, newOwner);
-//    }
+    @GET
+    @Path("/{airlinePart}/name/{newOwner}")
+    public String changePartOwner(@PathParam("airlinePart") String airlinePart, @PathParam("newOwner") String newOwner) {
+		return clientApp.changePartOwner(airlinePart, newOwner);
+    }
     
 }
