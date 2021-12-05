@@ -1,0 +1,211 @@
+Error: chaincode install failed with status: 500 - failed to invoke backing implementation of 'InstallChaincode': could not build chaincode: docker build failed: docker image build failed: docker build failed: Error returned from build: 2 "github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor
+github.com/hyperledger/fabric-contract-api-go/contractapi/utils
+github.com/rogpeppe/go-internal/semver
+github.com/gobuffalo/packd/internal/takeon/github.com/markbates/errx
+github.com/golang/protobuf/proto
+github.com/confluentinc/confluent-kafka-go/kafka
+golang.org/x/net/internal/timeseries
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/credentials/internal
+google.golang.org/grpc/metadata
+google.golang.org/grpc/internal/grpcrand
+golang.org/x/net/trace
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/codes
+google.golang.org/grpc/encoding
+google.golang.org/grpc/internal
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/serviceconfig
+google.golang.org/grpc/internal/balancerload
+golang.org/x/sys/unix
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/resolver
+google.golang.org/grpc/internal/grpcsync
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/net/http2/hpack
+golang.org/x/text/unicode/norm
+golang.org/x/text/secure/bidirule
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/stats
+google.golang.org/grpc/tap
+google.golang.org/grpc/naming
+google.golang.org/grpc/resolver/dns
+github.com/hyperledger/fabric-protos-go/msp
+github.com/golang/protobuf/ptypes/timestamp
+github.com/hyperledger/fabric-protos-go/ledger/rwset
+google.golang.org/grpc/credentials
+google.golang.org/grpc/encoding/proto
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/duration
+github.com/hyperledger/fabric-chaincode-go/pkg/attrmgr
+github.com/hyperledger/fabric-protos-go/common
+google.golang.org/genproto/googleapis/rpc/status
+google.golang.org/grpc/balancer
+github.com/golang/protobuf/ptypes
+github.com/hyperledger/fabric-chaincode-go/pkg/cid
+google.golang.org/grpc/binarylog/grpc_binarylog_v1
+google.golang.org/grpc/balancer/base
+google.golang.org/grpc/status
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/balancer/roundrobin
+golang.org/x/net/idna
+google.golang.org/grpc/internal/binarylog
+google.golang.org/grpc/internal/syscall
+google.golang.org/grpc/peer
+google.golang.org/grpc/resolver/passthrough
+github.com/hyperledger/fabric-protos-go/ledger/queryresult
+github.com/mailru/easyjson/jlexer
+github.com/mailru/easyjson/buffer
+gopkg.in/yaml.v2
+golang.org/x/net/http/httpguts
+github.com/PuerkitoBio/urlesc
+github.com/mailru/easyjson/jwriter
+golang.org/x/net/http2
+golang.org/x/text/width
+github.com/xeipuuv/gojsonpointer
+github.com/joho/godotenv
+github.com/xeipuuv/gojsonreference
+github.com/PuerkitoBio/purell
+github.com/rogpeppe/go-internal/module
+github.com/xeipuuv/gojsonschema
+github.com/gobuffalo/packd
+github.com/rogpeppe/go-internal/modfile
+github.com/go-openapi/swag
+github.com/gobuffalo/envy
+google.golang.org/grpc/internal/transport
+github.com/go-openapi/jsonpointer
+github.com/gobuffalo/packr
+github.com/hyperledger/fabric-contract-api-go/internal/utils
+github.com/go-openapi/jsonreference
+github.com/go-openapi/spec
+google.golang.org/grpc
+github.com/hyperledger/fabric-contract-api-go/internal/types
+github.com/hyperledger/fabric-contract-api-go/metadata
+github.com/hyperledger/fabric-contract-api-go/serializer
+github.com/hyperledger/fabric-protos-go/peer
+github.com/hyperledger/fabric-contract-api-go/internal
+github.com/hyperledger/fabric-chaincode-go/shim/internal
+github.com/hyperledger/fabric-chaincode-go/shim
+github.com/hyperledger/fabric-contract-api-go/contractapi
+# github.com/confluentinc/confluent-kafka-go/kafka
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_txnmgr.o): in function `rd_kafka_txn_set_fatal_error':
+(.text+0x149): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_txnmgr.o): in function `rd_kafka_txn_set_abortable_error0':
+(.text+0x703): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_admin.o): in function `rd_kafka_NewTopic_new':
+(.text+0x315): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_admin.o): in function `rd_kafka_AlterConfigsResponse_parse':
+(.text+0x71c0): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_admin.o): in function `rd_kafka_admin_result_fail':
+(.text+0x8f3a): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_admin.o):(.text+0x9ca7): more undefined references to `__strdup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_metadata.o): in function `rd_kafka_parse_Metadata':
+(.text+0x558c): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_metadata.o): in function `rd_list_string_copy':
+(.text+0x8122): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_metadata.o): in function `rd_kafka_metadata_leader_query_tmr_cb':
+(.text+0x8e9d): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o): in function `rd_kafka_topic_partition_list_add0':
+(.text+0x311b): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o): in function `rd_kafka_toppar_enq_error':
+(.text+0x5395): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o): in function `rd_kafka_topic_partition_new':
+(.text+0x55b5): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o):(.text+0x5635): more undefined references to `__strdup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o): in function `rd_kafka_topic_partition_new_from_rktp':
+(.text+0x5748): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o): in function `rd_kafka_topic_partition_list_get_leaders':
+(.text+0x7715): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_partition.o): in function `rd_kafka_topic_partition_list_get_topic_names':
+(.text+0x79bb): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_pattern.o): in function `rd_kafka_pattern_new':
+(.text+0xb1): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_pattern.o): in function `rd_kafka_pattern_list_init':
+(.text+0x372): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_pattern.o): in function `rd_kafka_pattern_list_new':
+(.text+0x5b9): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_cgrp.o): in function `rd_kafka_cgrp_op_serve':
+(.text+0xb4c): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_cgrp.o): in function `rd_kafka_cgrp_assigned_offsets_commit':
+(.text+0x4d3a): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_cgrp.o): in function `rd_kafka_consumer_group_metadata_new_with_genid':
+(.text+0x879f): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x87b3): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x87c9): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_cgrp.o): in function `rd_kafka_consumer_group_metadata_dup':
+(.text+0x8ca2): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_cgrp.o):(.text+0x8cba): more undefined references to `__strdup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_request.o): in function `rd_kafka_handle_OffsetFetch':
+(.text+0x5f7a): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_request.o): in function `rd_kafka_MetadataRequest':
+(.text+0xd886): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_request.o): in function `rd_list_string_copy':
+(.text+0xe142): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_op.o): in function `rd_kafka_q_op_err':
+(.text+0x951): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_op.o): in function `rd_kafka_consumer_err':
+(.text+0xaa8): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_op.o): in function `rd_kafka_op_throttle_time':
+(.text+0x1381): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_offset.o):(.text+0x22a): more undefined references to `__strdup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka.o): in function `rd_kafka_ListGroups_resp_cb':
+(.text+0x7a12): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka.o): in function `rd_kafka_DescribeGroups_resp_cb':
+(.text+0xc840): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xc892): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xc8c5): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xc8fd): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xc92d): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xced0): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka.o):(.text+0xcf03): more undefined references to `__strndup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_plugin.o): in function `rd_kafka_plugins_conf_set0':
+(.text+0x23b): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rddl.o): in function `rd_dl_error':
+(.text+0x1af): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x1df): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdhdrhistogram.o): in function `unittest_rdhdrhistogram':
+(.text+0x1b5e): undefined reference to `__isnan'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x1b7a): undefined reference to `__isnan'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_sasl_oauthbearer.o): in function `rd_kafka_oauthbearer_set_token0':
+(.text+0x1e3): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x208): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_sasl_oauthbearer.o): in function `rd_kafka_oauthbearer_set_token_failure0':
+(.text+0x4db): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_sasl_oauthbearer.o): in function `rd_kafka_oauthbearer_unsecured_token0':
+(.text+0x7b8): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x953): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_sasl_oauthbearer.o):(.text+0x9c3): more undefined references to `__strdup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_sasl_oauthbearer.o): in function `rd_kafka_sasl_oauthbearer_fsm':
+(.text+0x3b19): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock.o): in function `rd_kafka_mock_topic_new':
+(.text+0xcc9): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock.o): in function `rd_kafka_mock_topic_set_error':
+(.text+0x1c13): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock.o): in function `rd_kafka_mock_topic_create':
+(.text+0x1ca7): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock.o): in function `rd_kafka_mock_partition_set_leader':
+(.text+0x1d47): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock.o): in function `rd_kafka_mock_partition_set_follower':
+(.text+0x1dd7): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock.o):(.text+0x1e6d): more undefined references to `__strdup' follow
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(async.o): in function `async_fibre_swapcontext':
+(.text+0x9d): undefined reference to `setcontext'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(async_posix.o): in function `ASYNC_is_capable':
+(.text+0xb): undefined reference to `getcontext'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(async_posix.o): in function `async_fibre_makecontext':
+(.text+0x3f): undefined reference to `getcontext'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x91): undefined reference to `makecontext'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock_cgrp.o): in function `rd_kafka_mock_cgrp_member_add':
+(.text+0x9eb): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xa27): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock_cgrp.o): in function `rd_kafka_mock_cgrp_get':
+(.text+0xdde): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0xe06): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_mock_cgrp.o): in function `rd_kafka_mcgrp_rebalance_timer_cb':
+(.text+0x14ff): undefined reference to `__strndup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: vendor/github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor/librdkafka_glibc_linux.a(rdkafka_sticky_assignor.o): in function `ConsumerPair_new':
+(.text+0x3346): undefined reference to `__strdup'
+/usr/lib/gcc/x86_64-alpine-linux-musl/10.3.1/../../../../x86_64-alpine-linux-musl/bin/ld: (.text+0x335f): undefined reference to `__strdup'
+collect2: error: ld returned 1 exit status
+"
