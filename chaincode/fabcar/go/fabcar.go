@@ -8,8 +8,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"strconv"
-
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
+	"log"
 )
 
 // SmartContract provides functions for managing a airline part
@@ -18,35 +18,34 @@ type SmartContract struct {
 }
 
 // Car describes basic details of what makes up a airline part
-type AirlinePart struct {
-	Name   string `json:"name"`
-	IsDefect  bool `json:"isDefect"`
-	SerialNumber string `json:"serialNumber"`
+type Asset struct {
+	ProductID   int `json:"productID"`
+	Quantity  int `json:"quantity"`
 	Owner  string `json:"owner"`
 }
 
 // QueryResult structure used for handling result of query
 type QueryResult struct {
 	Key    string `json:"Key"`
-	Record *AirlinePart
+	Record *Asset
 }
 
 // InitLedger adds a base set of airline parts to the ledger
 func (s *SmartContract) InitLedger(ctx contractapi.TransactionContextInterface) error {
-	airlineParts := []AirlinePart{
-		AirlinePart{Name: "Flight Controls", IsDefect: false, SerialNumber: "E96GJE93D", Owner: "United Airlines"},
-		AirlinePart{Name: "Landing Gear", IsDefect: false, SerialNumber: "U46834HJ3", Owner: "American Airlines"},
-		AirlinePart{Name: "Fuselage", IsDefect: true, SerialNumber: "FOIE463U2", Owner: "Delta"},
-		AirlinePart{Name: "Rudder Pedals", IsDefect: false, SerialNumber: "DFU9436OB", Owner: "Spirit"},
-		AirlinePart{Name: "Instrument Panels", IsDefect: false, SerialNumber: "FJE582KFD3", Owner: "Frontier"},
-		AirlinePart{Name: "Engine", IsDefect: true, SerialNumber: "DFJRO895D", Owner: "Alaska Airlines"},
-		AirlinePart{Name: "Wings", IsDefect: false, SerialNumber: "RID5569D2", Owner: "Southwest Airlines"},
-		AirlinePart{Name: "Rudders", IsDefect: false, SerialNumber: "TOIE835D3", Owner: "JetBlue"},
-		AirlinePart{Name: "Vertical Stabalizer", IsDefect: false, SerialNumber: "TI45GMD32W", Owner: "Hawaiian Airlines"},
-		AirlinePart{Name: "Overhead Panel", IsDefect: true, SerialNumber: "EKLF8534H", Owner: "Allegiant Air"},
+	assets := []Asset{
+		Asset{ProductID: 0, Quantity: 10, Owner: "United Airlines"},
+		Asset{ProductID: 1, Quantity: 5, Owner: "Delta"},
+		Asset{ProductID: 2, Quantity: 3, Owner: "Spirit"},
+		Asset{ProductID: 3, Quantity: 7, Owner: "Frontier"},
+		Asset{ProductID: 4, Quantity: 9, Owner: "Alaska Airlines"},
+		Asset{ProductID: 5, Quantity: 6, Owner: "Southwest Airlines"},
+		Asset{ProductID: 6, Quantity: 12, Owner: "JetBlue"},
+		Asset{ProductID: 7, Quantity: 3, Owner: "Hawaiian Airlines"},
+		Asset{ProductID: 8, Quantity: 3, Owner: "Allegiant Air"},
+		Asset{ProductID: 9, Quantity: 7, Owner: "Boeing"},
 	}
 
-	for i, parts := range airlineParts {
+	for i, parts := range assets {
 		partsAsBytes, _ := json.Marshal(parts)
 		err := ctx.GetStub().PutState("PART"+strconv.Itoa(i), partsAsBytes)
 
@@ -59,21 +58,26 @@ func (s *SmartContract) InitLedger(ctx contractapi.TransactionContextInterface) 
 }
 
 // CreateAirlinePart adds a new airline part to the world state with given details
-func (s *SmartContract) CreateAirlinePart(ctx contractapi.TransactionContextInterface, airlinePartNumber string, name string, isDefect bool, serialNumber string, owner string) error {
-	airlinePart := AirlinePart{
-		Name:   name,
-		IsDefect:  isDefect,
-		SerialNumber: serialNumber,
+func (s *SmartContract) CreateAsset(ctx contractapi.TransactionContextInterface, airlinePartNumber string, productID int, quantity int, owner string) (string, error) {
+	asset := Asset{
+		ProductID:   productID,
+		Quantity: quantity,
 		Owner:  owner,
 	}
 
-	airlinePartAsBytes, _ := json.Marshal(airlinePart)
+	airlinePartAsBytes, err := json.Marshal(asset)
 
-	return ctx.GetStub().PutState(airlinePartNumber, airlinePartAsBytes)
+	if err != nil {
+    	return "", err
+	}
+
+	message := "{\"message\": \"addProduct\", \"productID\": " + strconv.Itoa(asset.ProductID) + ", \"quantity\": " + strconv.Itoa(asset.Quantity) + "}\n"
+
+	return message, ctx.GetStub().PutState(airlinePartNumber, airlinePartAsBytes)
 }
 
 // QueryAirlinePart returns the airline part stored in the world state with given id
-func (s *SmartContract) QueryAirlinePart(ctx contractapi.TransactionContextInterface, airlinePartNumber string) (*AirlinePart, error) {
+func (s *SmartContract) ReadAsset(ctx contractapi.TransactionContextInterface, airlinePartNumber string) (*Asset, error) {
 	airlinePartAsBytes, err := ctx.GetStub().GetState(airlinePartNumber)
 
 	if err != nil {
@@ -84,14 +88,13 @@ func (s *SmartContract) QueryAirlinePart(ctx contractapi.TransactionContextInter
 		return nil, fmt.Errorf("%s does not exist", airlinePartNumber)
 	}
 
-	airlinePart := new(AirlinePart)
+	airlinePart := new(Asset)
 	_ = json.Unmarshal(airlinePartAsBytes, airlinePart)
 
 	return airlinePart, nil
 }
 
-// QueryAllAirlineParts returns all airline parts found in world state
-func (s *SmartContract) QueryAllAirlineParts(ctx contractapi.TransactionContextInterface) ([]QueryResult, error) {
+func (s *SmartContract) QueryAllParts(ctx contractapi.TransactionContextInterface) ([]QueryResult, error) {
 	startKey := ""
 	endKey := ""
 
@@ -111,10 +114,10 @@ func (s *SmartContract) QueryAllAirlineParts(ctx contractapi.TransactionContextI
 			return nil, err
 		}
 
-		airlinePart := new(AirlinePart)
-		_ = json.Unmarshal(queryResponse.Value, airlinePart)
+		asset := new(Asset)
+		_ = json.Unmarshal(queryResponse.Value, asset)
 
-		queryResult := QueryResult{Key: queryResponse.Key, Record: airlinePart}
+		queryResult := QueryResult{Key: queryResponse.Key, Record: asset}
 		results = append(results, queryResult)
 	}
 
@@ -122,18 +125,26 @@ func (s *SmartContract) QueryAllAirlineParts(ctx contractapi.TransactionContextI
 }
 
 // ChangeAirlinePartOwner updates the owner field of airline part with given id in world state
-func (s *SmartContract) ChangeAirlinePartOwner(ctx contractapi.TransactionContextInterface, airlinePartNumber string, newOwner string) error {
-	airlinePart, err := s.QueryAirlinePart(ctx, airlinePartNumber)
+func (s *SmartContract) TransferAsset(ctx contractapi.TransactionContextInterface, airlinePartNumber string, newOwner string) (string, error) {
+	asset, err := s.ReadAsset(ctx, airlinePartNumber)
 
 	if err != nil {
-		return err
+		return "", err
 	}
 
-	airlinePart.Owner = newOwner
+	asset.Owner = newOwner
 
-	airlinePartAsBytes, _ := json.Marshal(airlinePart)
+	airlinePartAsBytes, _ := json.Marshal(asset)
 
-	return ctx.GetStub().PutState(airlinePartNumber, airlinePartAsBytes)
+	message := "{\"message\": \"sellProduct\", \"productID\": " + strconv.Itoa(asset.ProductID) + ", \"quantity\": " + strconv.Itoa(asset.Quantity) + ", \"buyer\": " + asset.Owner + "}\n"
+
+	return message, ctx.GetStub().PutState(airlinePartNumber, airlinePartAsBytes)
+}
+
+func failOnError(err error, msg string) {
+	if err != nil {
+		log.Panicf("%s: %s", msg, err)
+	}
 }
 
 func main() {
@@ -149,3 +160,4 @@ func main() {
 		fmt.Printf("Error starting fabcar chaincode: %s", err.Error())
 	}
 }
+

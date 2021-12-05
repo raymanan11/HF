@@ -17,7 +17,7 @@ class FabCar extends Contract {
                 color: 'blue',
                 make: 'Toyota',
                 model: 'Prius',
-                owner: 'Tomoko',
+                owner: 'Steven',
             },
             {
                 color: 'red',
@@ -107,7 +107,7 @@ class FabCar extends Contract {
         console.info('============= END : Create Car ===========');
     }
 
-    async queryAllCars(ctx) {
+    async QueryAllAirlineParts(ctx) {
         const startKey = '';
         const endKey = '';
         const allResults = [];

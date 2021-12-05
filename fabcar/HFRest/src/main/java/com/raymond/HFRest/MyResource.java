@@ -36,4 +36,10 @@ public class MyResource {
 		return clientApp.changePartOwner(airlinePart, newOwner);
     }
     
+    @GET
+    @Path("/{airlinePart}/partName/{partName}/quantity/{quantity}/newOwner/{newOwner}")
+    public String createPart(@PathParam("airlinePart") String airlinePart, @PathParam("partName") String partName, @PathParam("quantity") String quantity, @PathParam("newOwner") String newOwner) {
+		return clientApp.createPart(airlinePart, partName, newOwner, quantity);
+    }
+    
 }

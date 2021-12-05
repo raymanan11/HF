@@ -140,7 +140,7 @@ public final class FabCar implements ContractInterface {
      * @return array of Cars found on the ledger
      */
     @Transaction()
-    public String queryAllCars(final Context ctx) {
+    public String QueryAllAirlineParts(final Context ctx) {
         ChaincodeStub stub = ctx.getStub();
 
         final String startKey = "CAR1";
@@ -167,24 +167,24 @@ public final class FabCar implements ContractInterface {
      * @param newOwner the new owner
      * @return the updated Car
      */
-//    @Transaction()
-//    public Car changeCarOwner(final Context ctx, final String key, final String newOwner) {
-//        ChaincodeStub stub = ctx.getStub();
-//
-//        String carState = stub.getStringState(key);
-//
-//        if (carState.isEmpty()) {
-//            String errorMessage = String.format("Car %s does not exist", key);
-//            System.out.println(errorMessage);
-//            throw new ChaincodeException(errorMessage, FabCarErrors.CAR_NOT_FOUND.toString());
-//        }
-//
-//        Car car = genson.deserialize(carState, Car.class);
-//
-//        Car newCar = new Car(car.getMake(), car.getModel(), car.getColor(), newOwner);
-//        String newCarState = genson.serialize(newCar);
-//        stub.putStringState(key, newCarState);
-//
-//        return newCar;
-//    }
+   @Transaction()
+   public Car changeCarOwner(final Context ctx, final String key, final String newOwner) {
+       ChaincodeStub stub = ctx.getStub();
+
+       String carState = stub.getStringState(key);
+
+       if (carState.isEmpty()) {
+           String errorMessage = String.format("Car %s does not exist", key);
+           System.out.println(errorMessage);
+           throw new ChaincodeException(errorMessage, FabCarErrors.CAR_NOT_FOUND.toString());
+       }
+
+       Car car = genson.deserialize(carState, Car.class);
+
+       Car newCar = new Car(car.getMake(), car.getModel(), car.getColor(), newOwner);
+       String newCarState = genson.serialize(newCar);
+       stub.putStringState(key, newCarState);
+
+       return newCar;
+   }
 }

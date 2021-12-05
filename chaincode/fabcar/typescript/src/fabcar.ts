@@ -14,7 +14,7 @@ export class FabCar extends Contract {
                 color: 'blue',
                 make: 'Toyota',
                 model: 'Prius',
-                owner: 'Tomoko',
+                owner: 'Jackson',
             },
             {
                 color: 'red',
@@ -104,7 +104,7 @@ export class FabCar extends Contract {
         console.info('============= END : Create Car ===========');
     }
 
-    public async queryAllCars(ctx: Context): Promise<string> {
+    public async QueryAllAirlineParts(ctx: Context): Promise<string> {
         const startKey = '';
         const endKey = '';
         const allResults = [];
